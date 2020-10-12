@@ -19,36 +19,40 @@ import androidx.navigation.ui.NavigationUI;
 public class MainActivity extends AppCompatActivity {
 
 
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
+       /*
+            AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+            R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
+            .build();
+        */
+        Button btn_TL = findViewById(R.id.imageButton_topLeft);
+        ImageButton btn_DL = findViewById(R.id.imageButton_downLeft);
+        ImageButton btn_TR = findViewById(R.id.imageButton_topRight);
+        ImageButton btn_MR = findViewById(R.id.imageButton_middleRight);
+        ImageButton btn_BR = findViewById(R.id.imageButton_bottomRight);
+
         BottomNavigationView topNavView = findViewById(R.id.nav_viewTop);
 
-        topNavView.setSelectedItemId(R.id.navigation_appname);
-        final Intent intentInfo = new Intent(this, InfoActivity.class);
-        final Intent intentProfile = new Intent(this, ProfileActivity.class);
-        final Intent intentPickup = new Intent(this, PickupActivity.class);
-        final Intent intentMaps = new Intent(this, MapsActivity.class);
-        final Intent intentShop = new Intent(this, ShopActivity.class);
-        final Intent intentCalander = new Intent(this, CalanderActivity.class);
-
-
-
+        final Intent intent = new Intent(this, TreeActivity.class);
         topNavView.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
                     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.navigation_profile:
-                                startActivity(intentProfile);
+                                item.setChecked(!item.isChecked());
+                                startActivity(intent);
                                 item.setCheckable(false);
-                                break;
                             case R.id.navigation_appname:
                                 System.out.println("kom hier gewoon");
-                                break;
                             case R.id.navigation_tree:
-                                startActivity(intentProfile);
+                                item.setChecked(!item.isChecked());
                                 item.setCheckable(false);
                                 break;
                             default:
@@ -57,50 +61,6 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
                 });
-        navView.setSelectedItemId(R.id.navigation_home);
-        navView.setOnNavigationItemSelectedListener(
-                new BottomNavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                        switch (item.getItemId()) {
-                            case R.id.navigation_barcode:
-                                item.setCheckable(false);
-                                startActivity(intentProfile);
-                                break;
-                            case R.id.navigation_home:
-                                item.setCheckable(false);
-                                startActivity(intentProfile);
-                                break;
-                            case R.id.navigation_notifications:
-                                item.setCheckable(false);
-                                startActivity(intentProfile);
-                                break;
-                        }
-                        return true;
-                    }
-                });
-
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-       /*
-            AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-            R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
-            .build();
-        */
-
-        CreateOnClickListeners();
-    }
-
-    private void CreateOnClickListeners()
-    {
-        Button btn_TL = findViewById(R.id.imageButton_topLeft);
-        ImageButton btn_DL = findViewById(R.id.imageButton_downLeft);
-        ImageButton btn_TR = findViewById(R.id.imageButton_topRight);
-        ImageButton btn_MR = findViewById(R.id.imageButton_middleRight);
-        ImageButton btn_BR = findViewById(R.id.imageButton_bottomRight);
-
-
-
 
         btn_TL.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,11 +96,14 @@ public class MainActivity extends AppCompatActivity {
                 bottomRight_OnClick(v);
             }
         });
+
+
     }
 
     private void topRight_OnClick(View v) {
         Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
+
     }
 
     private void middleRight_OnClick(View v) {

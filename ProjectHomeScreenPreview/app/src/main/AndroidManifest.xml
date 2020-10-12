@@ -12,18 +12,13 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:launchMode="singleInstance"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".BuyingActivity"
-            android:label="@string/title_activity_buying"
-            android:theme="@style/AppTheme.NoActionBar.NoActionBar"></activity>
-        <activity
-            android:name=".BarcodeActivity"
-            android:label="@string/title_activity_barcode"
-            android:theme="@style/AppTheme.NoActionBar.NoActionBar" />
+            android:name=".TreeActivity"
+            android:label="@string/title_activity_tree"
+            android:theme="@style/AppTheme.NoActionBar.NoActionBar"/>
         <activity
             android:name=".ProfileActivity"
             android:label="@string/title_activity_profile"
@@ -64,8 +59,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
