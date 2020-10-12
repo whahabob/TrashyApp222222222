@@ -102,4 +102,44 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+  <string name="title_postal_code">Postal code</string>
+  <string name="title_house_number">House number</string>
+  <string name="title_select_type">Select type of trash</string>
+  <string name="feedbackGrof">Grof afval</string>
+  <string name="feedbackElectrical">Electrical components</string>
+  <string name="feedbackGarden">Garden waste</string>
+  <string name="title_name">Name</string>
+  <string name="title_telephone_number">Telephone number</string>
+  <string name="title_e_mail_address">E-mail address</string>
+  <string name="title_pickUp_text">
+    This page is dedicated for requesting a garbage pickup
+    by your local garbage disposal company. \nYou only have to fill in the form below, we will
+    redirect this information to your local garbage disposal company and redirect their
+    approval-question to this page, once this is signed your local company will arrange the
+    rest
+  </string>
+  <string name="title_activity_tree">TreeActivity</string>
+  <!-- Strings used for fragments for navigation -->
+  <string name="first_fragment_label">First Fragment</string>
+  <string name="second_fragment_label">Second Fragment</string>
+  <string name="next">Next</string>
+  <string name="previous">Previous</string>
+
+  <string name="hello_first_fragment">Hello first fragment</string>
+  <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+  <string name="title_plastic_bottles_recycled">Plastic bottles recycled:</string>
+  <string name="title_glass_bottles_recycled">Glass bottles recycled:</string>
+  <string name="title_motivationalTextTreesPlanted">
+    Jens, you recycled approximately 89kg of
+    plastic, and 48kg of glass. This accounts to a total of 137 kg!\n\nThank you!\n\nYour
+    next SUPER reward is at 150kg!
+  </string>
+  <string name="title_business">Business?</string>
+  <string name="title_buy_trees">
+    Do you want to ramp up your number of trees planted but have no
+    more bottles to recycle? Use the button below to plant a tree for just 200 points and the
+    tree will be added to your total amount of trees planted!
+  </string>
+  <string name="title_plant_a_tree">Plant a tree!</string>
+  <string name="title_submit">Submit</string>
 </resources>
