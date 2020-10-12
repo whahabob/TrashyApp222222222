@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
-    >
+    android:background="@color/colorPrimary">
 
-    <include layout="@layout/layout_top_bar" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_viewTop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toTopOf="@+id/container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="#ffffff"
+        app:menu="@menu/top_nav_menu" >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_horizontal"
+            android:text="Trashy"
+            android:textColor="#6aa84f"
+            android:textSize="30sp"
+            app:fontFamily="@font/caveat_bold"
+            tools:text="Trashy" />
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     <LinearLayout
         android:id="@+id/LinearLayout_entire_screen"
@@ -41,31 +63,21 @@
                     android:layout_gravity="center"
                     android:layout_margin="0dp"
                     android:layout_weight="1"
-                    android:text="Its friday"
+                    android:text="Its tuesday"
                     android:textSize="25dp" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:weightSum="2"
+                android:weightSum="1"
                 android:orientation="vertical">
-
                 <ImageButton
                     android:id="@+id/imageButton_downLeft"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="0dp"
                     android:layout_weight="1"
-                    android:background="@drawable/shoppingcart" />
-
-                <ImageButton
-                    android:id="@+id/imageButton_bottomLeft"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/tree" />
+                    android:layout_margin="0dp"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout
@@ -81,14 +93,12 @@
                 android:layout_weight="1"
                 android:weightSum="1"
                 android:orientation="vertical">
-
                 <ImageButton
                     android:id="@+id/imageButton_topRight"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="58dp"
                     android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@android:drawable/ic_menu_mapmode" />
+                    android:layout_weight="1" />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -96,24 +106,33 @@
                 android:layout_weight="1"
                 android:weightSum="2"
                 android:orientation="vertical">
-
                 <ImageButton
                     android:id="@+id/imageButton_middleRight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="0dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/leaves" />
-
+                    android:layout_weight="1" />
                 <ImageButton
                     android:id="@+id/imageButton_bottomRight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="0dp"
                     android:layout_weight="1"
-                    android:background="@drawable/truck" />
+                    android:layout_margin="0dp"/>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-    <include layout="@layout/layout_bottom_bar" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
